@@ -142,9 +142,9 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.22;b
   <div class="block-cream reveal zoom" style="padding:0 2rem 2.5rem;" data-duration="1000">
     
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
-      <div class="photo-ph"><img class="gallery-photo" src="P1.jpeg" alt="Foto 1" data-index="0" style="width:100%;height:140px;object-fit:cover;cursor:pointer;" onclick="openLightbox(0)"/></div>
-      <div class="photo-ph"><img class="gallery-photo" src="P2.jpeg" alt="Foto 2" data-index="1" style="width:100%;height:140px;object-fit:cover;cursor:pointer;" onclick="openLightbox(1)"/></div>
-      <div class="photo-ph"><img class="gallery-photo" src="P3.jpeg" alt="Foto 3" data-index="2" style="width:100%;height:140px;object-fit:cover;cursor:pointer;" onclick="openLightbox(2)"/></div>
+      <div class="photo-ph"><img src="P1.jpeg" alt="Foto 1" style="width:100%;height:140px;object-fit:cover;cursor:pointer;" onclick="openLightbox(this.src)"/></div>
+      <div class="photo-ph"><img src="P2.jpeg" alt="Foto 2" style="width:100%;height:140px;object-fit:cover;cursor:pointer;" onclick="openLightbox(this.src)"/></div>
+      <div class="photo-ph"><img src="P3.jpeg" alt="Foto 3" style="width:100%;height:140px;object-fit:cover;cursor:pointer;" onclick="openLightbox(this.src)"/></div>
     </div>
   </div>
 
@@ -445,10 +445,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.22;b
 
   <!-- LIGHTBOX MODAL -->
   <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;z-index:1200;">
-    <div style="position:relative;max-width:92%;max-height:92%;display:flex;align-items:center;justify-content:center;">
-      <button id="lightbox-prev" onclick="showGalleryImage(-1)" aria-label="Anterior" style="position:absolute;left:-14px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.9);border:none;border-radius:999px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;line-height:1;color:#2F3E2E;box-shadow:0 6px 18px rgba(0,0,0,0.18);">&#8592;</button>
+    <div style="position:relative;max-width:92%;max-height:92%;">
       <img id="lightbox-img" src="" alt="" style="display:block;max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 20px 40px rgba(0,0,0,0.6);"/>
-      <button id="lightbox-next" onclick="showGalleryImage(1)" aria-label="Siguiente" style="position:absolute;right:-14px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.9);border:none;border-radius:999px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;line-height:1;color:#2F3E2E;box-shadow:0 6px 18px rgba(0,0,0,0.18);">&#8594;</button>
       <button onclick="closeLightbox()" aria-label="Cerrar" style="position:absolute;top:-12px;right:-12px;background:#fff;border-radius:999px;border:none;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.2);">✕</button>
     </div>
   </div>
