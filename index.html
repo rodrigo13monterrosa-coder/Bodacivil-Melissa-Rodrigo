@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6B6B3A">
+  <title>Melissa & Rodrigo · 26 de diciembre de 2026</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Pinyon+Script&family=Lato:wght@300;400&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:#f5f0e8;min-height:100vh;overflow-x:hidden;padding:16px 0;background-image:radial-gradient(circle at top left, rgba(255,255,255,0.32) 0, rgba(255,255,255,0) 32%),linear-gradient(135deg, rgba(107,107,58,0.04), rgba(255,255,255,0.22));background-attachment:fixed;}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:linear-gradient(rgba(0,0,0,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.018) 1px,transparent 1px);background-size:16px 16px;mask-image:linear-gradient(180deg, rgba(0,0,0,.8), rgba(0,0,0,.25));}
+#intro-screen{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:1200;background:linear-gradient(180deg, rgba(47,62,46,0.72), rgba(47,62,46,0.84)), url('V.jpeg') center/cover no-repeat;transition:opacity 1000ms ease, visibility 1000ms ease;cursor:pointer;touch-action:manipulation;}
+#intro-screen.is-hidden{opacity:0;visibility:hidden;pointer-events:none;}
+#intro-screen .intro-monogram{width:min(48vw, 280px);height:auto;display:block;transition:transform 240ms cubic-bezier(.22,1,.36,1), filter 240ms ease, opacity 240ms ease;filter:drop-shadow(0 8px 14px rgba(0,0,0,0.22));will-change:transform,filter;}
+#intro-screen:hover .intro-monogram{transform:translateY(-4px) scale(1.03);filter:drop-shadow(0 14px 20px rgba(0,0,0,0.3)) brightness(1.02);}
+#intro-screen .intro-monogram:active{transform:translateY(2px) scale(0.97);filter:drop-shadow(0 5px 12px rgba(0,0,0,0.2));}
+#invitation-content{opacity:0;visibility:hidden;transition:opacity 900ms ease, transform 900ms ease, visibility 900ms ease;transform:translateY(18px);background:#F5F0E8;font-family:'Lato',sans-serif;width:100%;max-width:420px;margin:0 auto;color:#3a2e22;border-radius:26px;box-shadow:0 28px 70px rgba(0,0,0,0.1);overflow:hidden;position:relative;}
+#invitation-content.is-visible{opacity:1;visibility:visible;transform:translateY(0);}
+.reveal .hero-name{opacity:0;transform:translateY(16px);transition:opacity 700ms ease, transform 700ms ease;}
+.reveal.is-visible .hero-name-1{opacity:1;transform:translateY(0);transition-delay:120ms;}
+.reveal.is-visible .hero-name-2{opacity:1;transform:translateY(0);transition-delay:260ms;}
+.inv{background:#F5F0E8;font-family:'Lato',sans-serif;width:100%;max-width:420px;margin:0 auto;color:#3a2e22;border-radius:26px;box-shadow:0 28px 70px rgba(0,0,0,0.1);overflow:hidden;position:relative;}
+.block-olive{background:#2f3e2e;color:#F5F0E8;}
+.block-terra{background:#bfa482;color:#F5F0E8;}
+.block-burn{background:linear-gradient(180deg, #2f3e2e 0%, #2f3e2e 100%);color:#F5F0E8;position:relative;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,0.14), 0 16px 36px rgba(47,62,46,0.12);}
+.block-burn::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 40%), radial-gradient(circle at bottom right, rgba(255,255,255,0.08), transparent 38%), linear-gradient(135deg, rgba(255,255,255,0.05), rgba(0,0,0,0.08));opacity:0.9;pointer-events:none;}
+.block-burn::after{content:'';position:absolute;left:-10%;right:-10%;bottom:-48%;height:180px;background:radial-gradient(ellipse at center, rgba(245,240,232,0.14), transparent 72%);filter:blur(10px);pointer-events:none;}
+.block-cream{background:#F5F0E8;}
+.block-rsvp{background:#e9e3d9;}
+.block-mauve{background:#727763;color:#F5F0E8;}
+.sec{padding:2.5rem 2rem;}
+.sec-sm{padding:1.75rem 2rem;}
+.script{font-family:'Pinyon Script',cursive;}
+.serif{font-family:'Cormorant Garamond',serif;}
+.label-up{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;}
+.cd-box{border:1px solid rgba(245,240,232,0.35);border-radius:4px;padding:0.75rem 1rem;text-align:center;min-width:64px;}
+.cd-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;line-height:1;}
+.cd-lbl{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;margin-top:4px;opacity:0.7;}
+.photo-ph{background:transparent;border:0;border-radius:6px;height:140px;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,0.06);} .reveal{opacity:0;filter:blur(8px);transform:translateY(26px);transition:opacity 1200ms cubic-bezier(.22,1,.36,1),transform 1200ms cubic-bezier(.22,1,.36,1),filter 1200ms cubic-bezier(.22,1,.36,1);will-change:opacity,transform,filter;}.reveal.is-visible{opacity:1;filter:blur(0);transform:translateY(0) translateX(0) scale(1);}.reveal.fade-in{transform:none;}.reveal.fade-up{transform:translateY(28px);}.reveal.slide-up{transform:translateY(34px);}.reveal.slide-left{transform:translateX(-24px);}.reveal.zoom{transform:scale(.97);}.reveal.blur{filter:blur(10px);transform:none;}.reveal.is-visible.fade-up,.reveal.is-visible.slide-up,.reveal.is-visible.slide-left,.reveal.is-visible.zoom{transform:translateY(0) translateX(0) scale(1);} .parallax-img{transform:translate3d(0,0,0);transition:transform 900ms ease-out;will-change:transform;}
+.form-field{width:100%;padding:10px 14px;background:#fff;border:1px solid #C9B49A;border-radius:4px;font-size:14px;color:#3a2e22;font-family:'Lato',sans-serif;}
+.form-field::placeholder{color:#9e8570;}
+.form-field:focus{outline:none;border-color:#efb3b9;}
+.pill{padding:7px 16px;border:1px solid #2F3E2E;border-radius:20px;background:transparent;color:#2F3E2E;font-size:12px;font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:0.05em;transition:background 0.15s;}
+.pill.on{background:#2F3E2E;color:#F5F0E8;border-color:#2F3E2E;}
+.pill:hover:not(.on){background:rgba(47,62,46,0.08);} 
+.rsub{width:100%;padding:14px;background:#2F3E2E;color:#F5F0E8;border:none;border-radius:4px;font-size:13px;letter-spacing:0.15em;text-transform:uppercase;font-family:'Lato',sans-serif;cursor:pointer;transition:opacity 0.15s;margin-top:20px;}
+.rsub:hover{opacity:0.85;}
+#ok-msg{display:none;background:#2F3E2E;border-radius:4px;padding:1rem;font-size:14px;color:#F5F0E8;text-align:center;line-height:1.6;margin-top:24px;}
+.iti-icon{
+    width:64px;
+    height:64px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:#FBF8F3;
+
+    border:1px solid rgba(107,107,58,.12);
+
+    box-shadow:0 8px 18px rgba(0,0,0,.06);
+
+    transition:all .35s ease;
+
+    position:relative;
+    z-index:1;
+}
+
+.iti-icon:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 26px rgba(0,0,0,.10);
+}
+
+.location-button{
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  transition:transform .25s ease, filter .25s ease;
+}
+
+.location-button:hover,
+.location-button:focus-visible{
+  transform:translateY(-3px) scale(1.04);
+  filter:brightness(1.12);
+}
+
+.location-button:focus-visible{
+  outline:2px solid rgba(245,240,232,0.9);
+  outline-offset:4px;
+}
+</style>
+</head>
+<body style="margin:0;background:#f5f0e8;">
+<div id="intro-screen" role="button" tabindex="0" aria-label="Abrir invitación">
+  <img class="intro-monogram" src="Mono2.png" alt="Monograma blanco" />
+</div>
+<div id="invitation-content" class="inv">
+
+  <!-- HERO -->
+  <div class="block-olive sec reveal fade-up" style="text-align:center;padding-top:3.5rem;padding-bottom:1.25rem;background:linear-gradient(180deg, rgba(47,62,46,0.72), rgba(47,62,46,0.88)), url('V.jpeg') center/cover no-repeat;position:relative;overflow:hidden;" data-duration="1000">
+    <p class="script hero-name hero-name-1" style="font-size:72px;color:#F5F0E8;line-height:1.05;">Melissa</p>
+    <p class="serif" style="font-size:22px;color:rgba(245,240,232,0.55);letter-spacing:0.12em;margin:0.2rem 0;">&amp;</p>
+    <p class="script hero-name hero-name-2" style="font-size:72px;color:#F5F0E8;line-height:1.05;">Rodrigo</p>
+    <div style="width:55px;height:1px;background:rgba(216,178,111,0.55);margin:1.75rem auto 1.5rem;"></div>
+    <p class="serif" style="font-size:20px;color:rgba(245,240,232,0.88);letter-spacing:0.1em;">26 · 12 · 2026</p>
+    <p class="serif" style="font: size 18px;color:rgba(245,240,232,0.5);letter-spacing:0.16em;text-transform:uppercase;margin-top:8px;">Boda civil</p>
+
+    <!-- Monograma con imagen personalizada -->
+    <div style="margin-top:2rem;display:flex;justify-content:center;">
+      <img src="Mono2.png" alt="Monograma MR" style="max-width:140px;height:auto;display:block;" />
+    </div>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div class="block-cream sec-sm reveal fade-in" style="text-align:center;background:linear-gradient(180deg, #ece8dd 0%, #F5F0E8 100%);" data-duration="900">
+    <p class="label-up" style="color:#6B6B3A;opacity:0.75;margin-bottom:1.25rem;">Faltan</p>
+    <div style="display:flex;justify-content:center;gap:10px;">
+      <div class="cd-box" style="border-color:rgba(107,107,58,0.3);background:rgba(241, 236, 225, 0.7);"><div class="cd-num" id="cd-d" style="color:#6B6B3A;">—</div><div class="cd-lbl" style="color:#6B6B3A;">días</div></div>
+      <div class="cd-box" style="border-color:rgba(107,107,58,0.3);background:rgba(241,236,225,0.7);"><div class="cd-num" id="cd-h" style="color:#6B6B3A;">—</div><div class="cd-lbl" style="color:#6B6B3A;">horas</div></div>
+      <div class="cd-box" style="border-color:rgba(107,107,58,0.3);background:rgba(241,236,225,0.7);"><div class="cd-num" id="cd-m" style="color:#6B6B3A;">—</div><div class="cd-lbl" style="color:#6B6B3A;">min</div></div>
+      <div class="cd-box" style="border-color:rgba(107,107,58,0.3);background:rgba(241,236,225,0.7);"><div class="cd-num" id="cd-s" style="color:#6B6B3A;">—</div><div class="cd-lbl" style="color:#6B6B3A;">seg</div></div>
+    </div>
+  </div>
+
+  <!-- CARTA -->
+  <div class="block-cream sec">
+    <p class="serif" style="font-style:italic;font-size:15px;color:#6b5540;margin-bottom:1rem;line-height:1.8;">Queridos amigos y familia,</p>
+    <p class="serif" style="font-size:14px;color:#6b5540;line-height:1.9;margin-bottom:1.5rem;">Con el corazón lleno de amor y gratitud queremos compartir junto a ustedes uno de los días más especiales de nuestras vidas. Cada uno de ustedes forma parte importante de nuestra historia y saber que estarán presentes hace de este momento aún más especial.</p>
+    <div style="text-align:right;">
+      <p class="serif" style="font-style:italic;font-size:13px;color:#9e8570;line-height:1.8;">Con todo nuestro amor,</p>
+      <p class="script" style="font-size:24px;color:#655340;line-height:1.2;margin-top:0.5rem;">Meli y Rodri</p>
+    </div>
+  </div>
+
+  <!-- FOTOS -->
+  <div class="block-cream reveal zoom" style="padding:0 2rem 2.5rem;" data-duration="1000">
+    
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+      <div class="photo-ph"><img src="P1.jpeg" alt="Foto 1" style="width:100%;height:140px;object-fit:cover;cursor:pointer;" onclick="openLightbox(this.src)"/></div>
+      <div class="photo-ph"><img src="P2.jpeg" alt="Foto 2" style="width:100%;height:140px;object-fit:cover;cursor:pointer;" onclick="openLightbox(this.src)"/></div>
+      <div class="photo-ph"><img src="P3.jpeg" alt="Foto 3" style="width:100%;height:140px;object-fit:cover;cursor:pointer;" onclick="openLightbox(this.src)"/></div>
+    </div>
+  </div>
+
+  <!-- LUGAR -->
+  <div class="block-mauve sec-sm reveal slide-left" style="background:linear-gradient(180deg, rgba(47,62,46,0.72), rgba(47,62,46,0.88)), url('V.jpeg') center/cover no-repeat;position:relative;overflow:hidden;" data-duration="950">
+    <div style="display:flex;gap:16px;align-items:center;position:relative;z-index:1;">
+      <a class="location-button" href="https://maps.app.goo.gl/StgpL4RS2uwB91bNA" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación del Hotel Hilton San Salvador en Google Maps">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+          <circle cx="19" cy="19" r="18" fill="rgba(245,240,232,0.12)" stroke="rgba(245,240,232,0.3)" stroke-width="1"/>
+          <path d="M19 9C15.13 9 12 12.13 12 16c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="none" stroke="rgba(245,240,232,0.85)" stroke-width="1.4" stroke-linejoin="round"/>
+          <circle cx="19" cy="16" r="2.5" fill="none" stroke="rgba(245,240,232,0.85)" stroke-width="1.3"/>
+        </svg>
+      </a>
+      <div>
+        <p class="serif" style="font-size:18px;font-weight:500;color:#F5F0E8;margin-bottom:5px;">Hotel Hilton San Salvador</p>
+        <p style="font-size:13px;color:rgba(245,240,232,0.85);line-height:1.7;font-family:'Lato',sans-serif;">89 Av Norte y 11 Calle Poniente, Colonia Escalon<br> Salón Jade - 8:00 am</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- ITINERARIO -->
+  <div class="block-cream sec">
+    <p class="label-up" style="color:#9e8570;text-align:center;margin-bottom:0.4rem;opacity:0.75;">Nuestro Día</p>
+    <div style="width:40px;height:1px;background:#6B6B3A;opacity:0.4;margin:0 auto 2.25rem;"></div>
+
+    <div style="position:relative;">
+
+      <!-- 8:00 izquierda — copa de brindis -->
+      <div style="display:flex;align-items:center;margin-bottom:2.25rem;">
+        <div style="flex:1;text-align:right;padding-right:16px;">
+          <p style="font-size:10px;color:#6B6B3A;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:3px;font-family:'Lato',sans-serif;">8:00 am</p>
+          <p class="serif" style="font-size:16px;color:#3a2e22;">Llegada de invitados</p>
+        </div>
+        <div class="iti-icon">
+
+<svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 21C12 21 18 15.5 18 10.5C18 7.46 15.54 5 12 5C8.46 5 6 7.46 6 10.5C6 15.5 12 21 12 21Z"
+        stroke="#B7B7AE" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="12" cy="10.5" r="2.2"
+        stroke="#B7B7AE" stroke-width="1.3"/>
+</svg>
+        </div>
+        <div style="flex:1;padding-left:16px;"></div>
+      </div>
+
+      <!-- 8:30 derecha — ceremonia (anillos entrelazados) -->
+      <div style="display:flex;align-items:center;margin-bottom:2.25rem;">
+        <div style="flex:1;padding-right:16px;"></div>
+        <div class="iti-icon">
+          <!-- Anillos entrelazados -->
+         <svg width="70" height="70" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="19" cy="25" r="7"
+          stroke="#B7B7AE"
+          stroke-width="2"
+          fill="none"/>
+
+  <circle cx="29" cy="25" r="7"
+          stroke="#B7B7AE"
+          stroke-width="2"
+          fill="none"/>
+
+  <!-- Diamante -->
+  <path d="M29 12
+           L31 14
+           L29 16
+           L27 14
+           Z"
+        stroke="#B7B7AE"
+        stroke-width="2"
+        fill="none"
+        stroke-linejoin="round"/>
+</svg>
+
+        </div>
+        <div style="flex:1;padding-left:16px;">
+          <p style="font-size:10px;color:#6B6B3A;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:3px;font-family:'Lato',sans-serif;">8:30 am</p>
+          <p class="serif" style="font-size:16px;color:#3a2e22;">Ceremonia civil</p>
+        </div>
+      </div>
+
+      <!-- 10:00 izquierda — plato y cubiertos -->
+      <div style="display:flex;align-items:center;margin-bottom:2.25rem;">
+        <div style="flex:1;text-align:right;padding-right:16px;">
+          <p style="font-size:10px;color:#6B6B3A;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:3px;font-family:'Lato',sans-serif;">9:30 am</p>
+          <p class="serif" style="font-size:16px;color:#3a2e22;">Desayuno</p>
+        </div>
+        <div class="iti-icon">
+         <svg width="70" height="70" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Plato -->
+  <circle cx="24" cy="24" r="9"
+          stroke="#B7B7AE"
+          stroke-width="2"
+          fill="none"/>
+
+  <circle cx="24" cy="24" r="5"
+          stroke="#B7B7AE"
+          stroke-width="2"
+          fill="none"/>
+
+  <!-- Tenedor -->
+  <line x1="11" y1="15" x2="11" y2="33"
+        stroke="#B7B7AE"
+        stroke-width="2"
+        stroke-linecap="round"/>
+
+  <line x1="9.5" y1="15" x2="9.5" y2="19"
+        stroke="#B7B7AE"
+        stroke-width="1.5"/>
+
+  <line x1="11" y1="15" x2="11" y2="19"
+        stroke="#B7B7AE"
+        stroke-width="1.5"/>
+
+  <line x1="12.5" y1="15" x2="12.5" y2="19"
+        stroke="#B7B7AE"
+        stroke-width="1.5"/>
+
+  <!-- Cuchillo -->
+  <path d="M37 15
+           L37 33"
+        stroke="#B7B7AE"
+        stroke-width="2"
+        stroke-linecap="round"/>
+
+  <path d="M35.5 15
+           C36.5 18 37 21 37 24"
+        stroke="#B7B7AE"
+        stroke-width="2"
+        stroke-linecap="round"/>
+</svg>
+        </div>
+        <div style="flex:1;padding-left:16px;"></div>
+      </div>
+
+      <!-- 12:00 derecha — fin del evento (sobre con corazón) -->
+      <div style="display:flex;align-items:center;">
+        <div style="flex:1;padding-right:16px;"></div>
+        <div class="iti-icon">
+   <svg width="42" height="42" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Corazón -->
+  <path d="M24 8.5
+           C24 6.8 22.7 5.6 21.2 5.6
+           C19.9 5.6 19 6.3 18.6 7.3
+           C18.2 6.3 17.3 5.6 16 5.6
+           C14.5 5.6 13.2 6.8 13.2 8.5
+           C13.2 11.1 18.6 14.2 18.6 14.2
+           C18.6 14.2 24 11.1 24 8.5Z"
+        transform="translate(5 0)"
+        stroke="#B7B7AE"
+        stroke-width="1.2"
+        stroke-linejoin="round"/>
+
+  <!-- Piso superior -->
+  <rect x="17" y="14" width="14" height="7" rx="1.5"
+        stroke="#B7B7AE"
+        stroke-width="1.2"/>
+
+  <!-- Piso inferior -->
+  <rect x="12" y="21" width="24" height="10" rx="1.8"
+        stroke="#B7B7AE"
+        stroke-width="1.2"/>
+
+  <!-- Base -->
+  <path d="M10 34H38"
+        stroke="#B7B7AE"
+        stroke-width="1.2"
+        stroke-linecap="round"/>
+
+  <!-- Detalles decorativos -->
+  <path d="M19 17H29"
+        stroke="#B7B7AE"
+        stroke-width="1.2"
+        stroke-linecap="round"/>
+
+  <path d="M15 26C16 27 17 27 18 26C19 25 20 25 21 26C22 27 23 27 24 26C25 25 26 25 27 26C28 27 29 27 30 26C31 25 32 25 33 26"
+        stroke="#B7B7AE"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg>
+        </div>
+        <div style="flex:1;padding-left:16px;">
+          <p style="font-size:10px;color:#6B6B3A;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:3px;font-family:'Lato',sans-serif;">12:00 pm</p>
+          <p class="serif" style="font-size:16px;color:#3a2e22;">Fin del evento</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRESSCODE -->
+<div class="block-burn sec-sm reveal fade-up" style="background:linear-gradient(180deg, rgba(47,62,46,0.72), rgba(47,62,46,0.86)), url('V.jpeg') center/cover no-repeat;position:relative;overflow:hidden;padding-top:2rem;padding-bottom:1.8rem;" data-duration="1000">
+  <p class="label-up" style="color:#F5F0E8;opacity:0.95;text-align:center;margin-bottom:1rem;">dresscode</p>
+
+  <p class="serif" style="font-size:18px;color:#F5F0E8;text-align:center;margin-bottom:2px;">Cóctel semi formal · Colores claros</p>
+  <div style="text-align:center;margin-top:8px;">
+    <a href="https://pin.it/17uHMZOca" target="_blank" rel="noopener noreferrer"
+       style="color:#F5F0E8;text-decoration:underline;font-family:'Lato',sans-serif;font-size:7px;letter-spacing:0.12em;text-transform:uppercase;">
+      Ideas aquí 
+    </a>
+  </div>
+  <div style="display:flex;justify-content:center;margin-top:0.9rem;">
+  </div>
+</div>
+
+  <!-- REGALO -->
+  <div class="block-cream sec-sm reveal slide-up" style="text-align:center;" data-duration="900">
+    <div style="margin-bottom:1rem;display:flex;justify-content:center;">
+      <svg width="42" height="42" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Regalo">
+        <g stroke="#5F765F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="8" y="15" width="32" height="20" rx="2.2"/>
+          <path d="M8 17L24 27L40 17"/>
+          <path d="M8 35L20 24"/>
+          <path d="M40 35L28 24"/>
+          <path d="M24 19.5C22.2 17 18.8 17.6 18.1 20.8C17.2 24.6 24 29.1 24 29.1C24 29.1 30.8 24.6 29.9 20.8C29.2 17.6 25.8 17 24 19.5Z" fill="#5F765F" stroke="none"/>
+        </g>
+      </svg>
+    </div>
+  <div style="max-width:320px;margin:0 auto 1rem;text-align:center;">
+    <p class="serif" style="
+        font-size:16px;
+        color:#3a2e22;
+        line-height:1.4;
+        margin:0 0 10px;
+    ">
+        ¡Tu presencia es el mejor regalo!
+    </p>
+
+    <p class="serif" style="
+        font-size:16px;
+        color:#3a2e22;
+        line-height:1.55;
+        margin:0 auto;
+    ">
+        Pero si quieres tener un detalle adicional con nosotros, 
+        te dejamos como puedes hacerlo.
+    </p>
+
+</div>
+
+<div style="width:min(78%, 320px);margin:0 auto;">
+      <div style="padding:1rem 0.9rem;border:1px solid rgba(107,107,58,0.28);background:linear-gradient(180deg, rgba(255,255,255,0.18), rgba(107,107,58,0.03));border-radius:14px;box-shadow:0 10px 22px rgba(58,46,34,0.05), inset 0 1px 0 rgba(255,255,255,0.4);">
+        <p class="serif" style="font-size:15px;color:#3a2e22;line-height:1.5;margin:0 0 0.7rem;text-align:center;font-weight:700;">Transferencia Bancaria</p>
+        <p class="serif" style="font-size:15px;color:#3a2e22;line-height:1.5;margin:0;text-align:center;">Melissa Fernanda Flores Castro</p>
+        <p class="serif" style="font-size:15px;color:#3a2e22;line-height:1.5;margin:0 0 0.7rem;text-align:center;">Banco América Central: 114905235</p>
+
+        <div style="height:1px;background:linear-gradient(90deg, transparent, rgba(107,107,58,0.28), transparent);margin:0.1rem 0 0.7rem;"></div>
+
+        <p class="serif" style="font-size:15px;color:#3a2e22;line-height:1.5;margin:0;text-align:center;">Rodrigo André Monterrosa Dominguez</p>
+        <p class="serif" style="font-size:15px;color:#3a2e22;line-height:1.5;margin:0;text-align:center;">Banco Agricola: 3113853904</p>
+      </div>
+
+      <p class="serif" style="font-size:12px;color:#3a2e22;line-height:1.5;margin:0.9rem 0 0;text-align:center;">Si prefieres hacernos llegar tu regalo el día del evento, también puedes hacerlo en un sobre</p>
+    </div>
+  </div>
+
+  <!-- RSVP -->
+  <div class="block-rsvp sec reveal fade-in" data-duration="1000" style="padding-top:2rem;padding-bottom:2rem;">
+    <p class="label-up" style="color:#6b5540;text-align:center;margin-bottom:0.5rem;opacity:18;font-size:10px;letter-spacing:0.2em;">¿Nos acompañas?</p>
+    <p class="serif" style="font-size:14px;color:#967f6c;text-align:center;margin:0 auto 1.5rem;letter-spacing:0.04em;line-height:1.5;max-width:290px;">Agradecemos tu confirmación antes del 30 de noviembre</p>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <input class="form-field" type="text" id="rn" placeholder="Nombre completo" autocomplete="name" style="border:1px solid rgba(107,107,58,0.28);background:#f9f4ee;border-radius:10px;padding:11px 14px;height:42px;box-shadow:none;"/>
+      <input class="form-field" type="email" id="re" placeholder="Email" autocomplete="email" style="border:1px solid rgba(107,107,58,0.28);background:#f9f4ee;border-radius:10px;padding:11px 14px;height:42px;box-shadow:none;color:#3a2e22;font-size:14px;font-family:'Lato',sans-serif;"/>
+      <div style="width:100%;">
+        <label for="rguests" class="serif" style="display:block;font-size:16px;color:#967f6c;margin:0 auto 0.75rem;letter-spacing:0.04em;line-height:1.5;text-align:left;">¿Cuántas personas nos acompañan?</label>
+        <select class="form-field" id="rguests" name="numero_personas" required aria-label="¿Cuántas personas nos acompañan?" style="border:1px solid rgba(107,107,58,0.28);background:#f9f4ee;border-radius:10px;padding:11px 14px;height:42px;box-shadow:none;color:#3a2e22;font-size:14px;font-family:'Lato',sans-serif;line-height:1.3;">
+          <option value="" selected disabled style="color:#9e8570;font-size:14px;font-family:'Lato',sans-serif;">Selecciona una cantidad</option>
+          <option value="1" style="color:#9e8570;font-size:14px;font-family:'Lato',sans-serif;">1</option>
+          <option value="2" style="color:#9e8570;font-size:14px;font-family:'Lato',sans-serif;">2</option>
+          <option value="3" style="color:#9e8570;font-size:14px;font-family:'Lato',sans-serif;">3</option>
+          <option value="4" style="color:#9e8570;font-size:14px;font-family:'Lato',sans-serif;">4</option>
+          <option value="5" style="color:#9e8570;font-size:14px;font-family:'Lato',sans-serif;">5</option>
+        </select>
+      </div>
+      <div style="width:100%;margin-top:0;">
+        <p class="serif" style="font-size:16px;color:#967f6c;text-align:left;margin:0 0 0.75rem;letter-spacing:0.04em;line-height:1.5;max-width:290px;">¿Asistirás?</p>
+        <div style="display:flex;gap:8px;justify-content:flex-start;">
+          <button type="button" class="pill on" id="by" onclick="setAtt('yes')" aria-pressed="true" style="padding:7px 16px;border-radius:999px;border:1px solid #2F3E2E;background:#2F3E2E;color:#F5F0E8;font-size:11px;letter-spacing:0.03em;line-height:1.2;cursor:pointer;">Sí, asistiré</button>
+          <button type="button" class="pill" id="bn" onclick="setAtt('no')" aria-pressed="false" style="padding:7px 16px;border-radius:999px;border:1px solid rgba(47,62,46,0.8);background:transparent;color:#2F3E2E;font-size:11px;letter-spacing:0.03em;line-height:1.2;cursor:pointer;">No podré ir</button>
+        </div>
+      </div>
+      <button class="rsub" id="rsub" onclick="doRsvp()" style="width:100%;padding:12px 14px;border-radius:10px;background:#2F3E2E;color:#F5F0E8;font-size:12px;letter-spacing:0.12em;line-height:1.2;margin-top:4px;">Confirmar asistencia</button>
+      <div id="ok-msg"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="block-olive sec reveal fade-up" style="text-align:center;" data-duration="950">
+    <div style="display:flex;justify-content:center;margin-bottom:0.75rem;">
+      <img src="Mono2.png" alt="Monograma MR" style="max-width:120px;height:auto;display:block;" />
+    </div>
+    <p class="script" style="font-size:32px;color:#F5F0E8;margin-bottom:0.5rem;">26 de diciembre, 2026</p>
+    <p style="font-size:11px;color:rgba(245,240,232,0.5);letter-spacing:0.15em;text-transform:uppercase;font-family:'Lato',sans-serif;">Hotel Hilton · San Salvador</p>
+  </div>
+
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;z-index:1200;">
+    <div style="position:relative;max-width:92%;max-height:92%;">
+      <img id="lightbox-img" src="" alt="" style="display:block;max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 20px 40px rgba(0,0,0,0.6);"/>
+      <button onclick="closeLightbox()" aria-label="Cerrar" style="position:absolute;top:-12px;right:-12px;background:#fff;border-radius:999px;border:none;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.2);">✕</button>
+    </div>
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
